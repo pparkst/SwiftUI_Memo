@@ -13,6 +13,8 @@ struct MemoListScene: View {
     //View가 생성되는 시점에 공유 데이터를 확인하고 Store속성과 동일한 형식을 가진 객체가 등록되어있다면 변수에 자동으로 저장해줌
     //SwiftUI에서는 이런방식으로 하나의 데이터를 여러 View에서 공유함
     @EnvironmentObject var store: MemoStore
+    //여기에서 SceneDelegate에서 주입해주었기에 아래의 ModalButton View에도 자동으로 주입됨
+    //그러나 ComposeScene는 sheet를 이용하여 modal방식으로 띄워주고있는데 이때는 자동으로 주입되지않음
     @EnvironmentObject var formatter: DateFormatter
     
     @State var showComposer: Bool = false
@@ -30,6 +32,8 @@ struct MemoListScene: View {
             //전달받는 곳에서는 @Binding을 붙임
                 .sheet(isPresented: $showComposer, content: {
                     ComposeScene(showComposer: self.$showComposer)
+                        .environmentObject(self.store)
+                    //위에 작성하듯이 ComposeScene는 Modal방식으로 호출하기에 store가 자동으로 주입되지않으므로 enviromentObject로 주입함, 주입하면서 새로 생성하는게 아닌 사용중인 store를 넣어서 리소스 감소
                 })
             //위의 버튼을 클릭함으로 ShowComposer의 값이 변경되고
             //값이 변경되면 sheet에서 감지하여 content에 ComposeScene Modal을 띄움

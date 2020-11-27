@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = MemoListScene().environment(\.managedObjectContext, context)
             .environmentObject(store)
-        //MemoListScene와 이어지는 화면에 동일한 객체를 쉽게 주입함
+        //MemoListScene와 이어지는 화면에 동일한 객체를 쉽게 주입함(연결한 View와 ChildView에 자동으로 주입함)
             .environmentObject(DateFormatter.memoDateFormatter)
  
         // Use a UIHostingController as window root view controller.
