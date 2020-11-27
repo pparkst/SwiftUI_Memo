@@ -15,6 +15,9 @@ struct ComposeScene: View {
     
     @Binding var showComposer: Bool
     
+    var memo: Memo? = nil
+    //여기에 메모가 전달되면 편집모드 아니면 쓰기모드
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,8 +31,13 @@ struct ComposeScene: View {
                 //SwiftUI에서는 컨테이너를 중앙에 배치함 중요!
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .navigationBarTitle("새 메모", displayMode: .inline)
-            .navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content))
+            .navigationBarTitle(memo != nil ?
+                "메모 편집" : "새 메모", displayMode: .inline)
+                .navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content, memo: memo))
+        }
+        .onAppear { //View가 표시되는 시점에 초기화를 하고싶다면 여기서구현함
+            self.content = self.memo?.content ?? ""
+            //memo가 있으면 memo내용, 없으면 공백
         }
     }
 }
@@ -52,10 +60,18 @@ fileprivate struct SaveButton: View {
     @EnvironmentObject var store: MemoStore
     @Binding var content: String
     
+    var memo: Memo? = nil
+    
     
     var body: some View {
         Button(action: {
-            self.store.insert(memo: self.content)
+            if let memo = self.memo {
+                //메모가 전달되어 편집모드
+                self.store.update(memo: memo, content: self.content)
+            }else{
+                //메모가 없으므로 쓰기모드
+                self.store.insert(memo: self.content)
+            }
             
             self.show = false
         }, label: {
