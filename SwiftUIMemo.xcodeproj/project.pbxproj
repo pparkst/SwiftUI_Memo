@@ -16,6 +16,7 @@
 		26CC39C4257134E8007F63A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CC39C2257134E8007F63A8 /* LaunchScreen.storyboard */; };
 		26CC39CD2571362D007F63A8 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39CC2571362D007F63A8 /* Memo.swift */; };
 		26CC39CF25713744007F63A8 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39CE25713744007F63A8 /* MemoStore.swift */; };
+		26CC39D22571401B007F63A8 /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39D12571401B007F63A8 /* DateFormatter+Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		26CC39C5257134E8007F63A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26CC39CC2571362D007F63A8 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		26CC39CE25713744007F63A8 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
+		26CC39D12571401B007F63A8 /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		26CC39B3257134E7007F63A8 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
+				26CC39D025714004007F63A8 /* Extension */,
 				26CC39CB25713614007F63A8 /* Model */,
 				26CC39B4257134E7007F63A8 /* AppDelegate.swift */,
 				26CC39B6257134E7007F63A8 /* SceneDelegate.swift */,
@@ -90,6 +93,14 @@
 				26CC39CE25713744007F63A8 /* MemoStore.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		26CC39D025714004007F63A8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				26CC39D12571401B007F63A8 /* DateFormatter+Memo.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 				26CC39BA257134E7007F63A8 /* SwiftUIMemo.xcdatamodeld in Sources */,
 				26CC39CF25713744007F63A8 /* MemoStore.swift in Sources */,
 				26CC39B5257134E7007F63A8 /* AppDelegate.swift in Sources */,
+				26CC39D22571401B007F63A8 /* DateFormatter+Memo.swift in Sources */,
 				26CC39BC257134E7007F63A8 /* MemoListScene.swift in Sources */,
 				26CC39B7257134E7007F63A8 /* SceneDelegate.swift in Sources */,
 				26CC39CD2571362D007F63A8 /* Memo.swift in Sources */,
