@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		260C8BEA257158580068DCE6 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260C8BE9257158580068DCE6 /* TextView.swift */; };
 		260C8BED25715A130068DCE6 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260C8BEC25715A130068DCE6 /* KeyboardObserver.swift */; };
+		260C8BEF25715F4B0068DCE6 /* DetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260C8BEE25715F4B0068DCE6 /* DetailScene.swift */; };
 		26CC39B5257134E7007F63A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39B4257134E7007F63A8 /* AppDelegate.swift */; };
 		26CC39B7257134E7007F63A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39B6257134E7007F63A8 /* SceneDelegate.swift */; };
 		26CC39BA257134E7007F63A8 /* SwiftUIMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26CC39B8257134E7007F63A8 /* SwiftUIMemo.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		260C8BE9257158580068DCE6 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		260C8BEC25715A130068DCE6 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		260C8BEE25715F4B0068DCE6 /* DetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScene.swift; sourceTree = "<group>"; };
 		26CC39B1257134E7007F63A8 /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CC39B4257134E7007F63A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26CC39B6257134E7007F63A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				26CC39D3257142A9007F63A8 /* View */,
 				26CC39BB257134E7007F63A8 /* MemoListScene.swift */,
 				26CC39D72571440A007F63A8 /* ComposeScene.swift */,
+				260C8BEE25715F4B0068DCE6 /* DetailScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				260C8BED25715A130068DCE6 /* KeyboardObserver.swift in Sources */,
 				26CC39B5257134E7007F63A8 /* AppDelegate.swift in Sources */,
 				26CC39D22571401B007F63A8 /* DateFormatter+Memo.swift in Sources */,
+				260C8BEF25715F4B0068DCE6 /* DetailScene.swift in Sources */,
 				26CC39BC257134E7007F63A8 /* MemoListScene.swift in Sources */,
 				26CC39B7257134E7007F63A8 /* SceneDelegate.swift in Sources */,
 				26CC39CD2571362D007F63A8 /* Memo.swift in Sources */,

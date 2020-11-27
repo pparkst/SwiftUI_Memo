@@ -23,7 +23,9 @@ struct MemoListScene: View {
     var body: some View {
         NavigationView { //상단 네비툴
             List(store.list) { memo in
-                MemoCell(memo: memo)
+                NavigationLink(destination: DetailScene(memo: memo), label: {
+                    MemoCell(memo: memo)
+                })
             }
         .navigationBarTitle("내 메모") //상단 타이틀
                 .navigationBarItems(trailing: ModalButton(show: $showComposer))
@@ -36,7 +38,7 @@ struct MemoListScene: View {
                     //위에 작성하듯이 ComposeScene는 Modal방식으로 호출하기에 store가 자동으로 주입되지않으므로 enviromentObject로 주입함, 주입하면서 새로 생성하는게 아닌 사용중인 store를 넣어서 리소스 감소
                     .environmentObject(KeyboardObserver())
                 })
-            //위의 버튼을 클릭함으로 ShowComposer의 값이 변경되고
+            //navigation의 버튼을 클릭함으로 ShowComposer의 값이 변경되고
             //값이 변경되면 sheet에서 감지하여 content에 ComposeScene Modal을 띄움
         }
     }
