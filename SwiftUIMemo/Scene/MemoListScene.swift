@@ -15,13 +15,39 @@ struct MemoListScene: View {
     @EnvironmentObject var store: MemoStore
     @EnvironmentObject var formatter: DateFormatter
     
+    @State var showComposer: Bool = false
+    
+    
     var body: some View {
         NavigationView { //상단 네비툴
             List(store.list) { memo in
                 MemoCell(memo: memo)
             }
         .navigationBarTitle("내 메모") //상단 타이틀
+                .navigationBarItems(trailing: ModalButton(show: $showComposer))
+            //$를 붙임으로 값이 복사가아니라 바인딩이 전달됨
+            //전달하는 곳에서는 $를 붙이고
+            //전달받는 곳에서는 @Binding을 붙임
+                .sheet(isPresented: $showComposer, content: {
+                    ComposeScene(showComposer: self.$showComposer)
+                })
+            //위의 버튼을 클릭함으로 ShowComposer의 값이 변경되고
+            //값이 변경되면 sheet에서 감지하여 content에 ComposeScene Modal을 띄움
         }
+    }
+}
+
+fileprivate struct ModalButton: View {
+    @Binding var show: Bool
+    //위의 View에서 넘어온 값이 저장되는게 아니라 바인딩이 저장됨
+    
+    var body: some View {
+        Button(action: {
+            self.show = true
+            //이렇게 바인딩의 show 값을 true로 바꾸면 상단 View의 ShowComposer의 값이 바뀜
+        }, label: {
+            Image(systemName: "plus")
+        })
     }
 }
 
