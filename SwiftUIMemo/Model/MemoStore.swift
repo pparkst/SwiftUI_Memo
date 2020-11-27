@@ -13,8 +13,8 @@ class MemoStore: ObservableObject {
     
     init() {
         list = [
-            Memo(content: "ppark Ipsum 1")
-            Memo(content: "ppark Ipsum 1")
+            Memo(content: "ppark Ipsum 1"),
+            Memo(content: "ppark Ipsum 1"),
             Memo(content: "ppark Ipsum 1")
         ]
     }
